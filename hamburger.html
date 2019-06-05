@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Hamburger</title>
+</head>
+<body>
+<div id="hambCalc">
+    <label> Выберите размер гамбургера:
+        <select id="size">
+            <option value="small">Маленький</option>
+            <option value="big">Большой</option>
+        </select>
+    </label>
+    <br>
+    <label> Выберите одну из трёх начинок:
+        <select id="stuffing">
+            <option value="cheese">Сыр</option>
+            <option value="salad">Салат</option>
+            <option value="potato">Картофель</option>
+        </select>
+    </label>
+    <br>
+    <label> Приправа:
+        <input type="checkbox" name="Приправа" id="topping"> </label>
+    <label> Майонез:
+        <input type="checkbox" name="Майонез" id="sauce"> </label>
+    <br>
+    <button id="calculate">Calculate</button>
+    <p id="price"></p>
+    <p id="calories"></p>
+</div>
+<script>
+    class Hamburger {
+        constructor(size, stuffing, topping, sauce) {
+            this.size = size;
+            this.stuffing = stuffing;
+            this.topping = topping;
+            this.sauce = sauce;
+        }
+
+        calcPrice() {
+            let price = 0;
+            if (this.size === 'small')
+                price += 50;
+            else
+                price += 100;
+            if (this.stuffing === 'cheese')
+                price += 10;
+            else if (this.stuffing === 'salad')
+                price += 20;
+            else
+                price += 15;
+            if (this.topping)
+                price += 15;
+            if (this.sauce)
+                price += 20;
+            return price
+        }
+
+        calcCalories() {
+            let energy = 0;
+            if (this.size === 'small')
+                energy += 20;
+            else
+                energy += 40;
+            if (this.stuffing === 'cheese')
+                energy += 20;
+            else if (this.stuffing === 'salad')
+                energy += 5;
+            else
+                energy += 10;
+            if (this.topping)
+                energy += 0;
+            if (this.sauce)
+                energy += 5;
+            return energy;
+        }
+    }
+
+    function handleButtonClick(event) {
+        if (event.target.textContent === 'Calculate') {
+            let size = document.getElementById('size').value;
+            let stuffing = document.getElementById('stuffing').value;
+            let topping = document.getElementById('topping').checked;
+            let sauce = document.getElementById('sauce').checked;
+            let hamb = new Hamburger(size, stuffing, topping, sauce);
+            document.getElementById('price').innerHTML = String(hamb.calcPrice() + ' рублей');
+            document.getElementById('calories').innerHTML = String(hamb.calcCalories() + ' калорий');
+        }
+    }
+
+    function init() {
+        let $body = document.querySelector('body');
+        $body.addEventListener('click', handleButtonClick);
+    }
+
+    window.addEventListener('load', init);
+
+</script>
+
+</body>
+</html>
