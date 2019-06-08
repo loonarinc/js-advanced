@@ -1,7 +1,3 @@
-* {
-  margin: 0;
-  padding: 0; }
-
 .header {
   height: 100px;
   display: flex;
@@ -37,7 +33,7 @@
 
 .product-item {
   width: 160px;
-  height: 235px;
+  height: 300px;
   border: 1px solid grey;
   display: flex;
   flex-direction: column;
@@ -47,5 +43,28 @@
   .product-item:hover {
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.16);
     transform: scale(1.05); }
+
+.dropcart {
+  position: relative; }
+  .dropcart__wrap {
+    background-color: #ffffff;
+    padding: 20px 15px 20px;
+    border: 1px solid #ececec;
+    border-radius: 5px;
+    display: none;
+    position: absolute;
+    top: 45px;
+    left: -25px; }
+    .dropcart__wrap::before {
+      content: "";
+      width: 12px;
+      height: 12px;
+      background-color: #fff;
+      position: absolute;
+      top: -7px;
+      left: 25px;
+      transform: rotate(45deg);
+      border-top: 1px solid #e8e8e8;
+      border-left: 1px solid #e8e8e8; }
 
 /*# sourceMappingURL=style.css.map */
