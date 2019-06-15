@@ -7,23 +7,44 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<div id="app">
 <header>
     <div class="logo">E-shop</div>
     <div class="cart">
-        <form action="#" method="post" class="search-form">
-            <input type="text" class="search-field">
+        <form action="#" method="post" class="search-form" @submit.prevent="filter(searchStr)">
+            <input type="text" class="search-field" v-model="searchStr" @keypress.enter.prevent >
             <button class="btn-search" type="submit">
                 <i class="fas fa-search"></i>
             </button>
         </form>
-        <button class="btn-cart" type="button">Корзина</button>
-        <div class="cart-block invisible"></div>
+        <button class="btn-cart" type="button" @click="isVisibleCart = !isVisibleCart">Корзина</button>
+        <div class="cart-block" :class="{invisible: isVisibleCart}">
+            <div :class="{invisible: isCartEmpty()}"><h3>Корзина пуста</h3></div>
+            <div class="cart-items" v-for="item of cart" :key="cart.id_product">
+                <div class="desc">
+                    <h3>{{item.product_name}}</h3>
+                    <p>{{item.price}}</p>
+                    <p>{{item.quantity}}</p>
+                    <button class="del-btn" @click="removeProduct(item)">&times;</button>
+                </div>
+            </div>
+        </div>
     </div>
 </header>
 <main>
     <div class="products">
+        <div class="product-item" :class="{invisible: product.visibility}" v-for="product of products" :key="product.id_product">
+            <img :src="imgCatalog" :alt="product.product_name">
+            <div class="desc">
+                <h3>{{product.product_name}}</h3>
+                <p>{{product.price}}</p>
+                <button class="buy-btn" @click="addProduct(product)">Купить</button>
+            </div>
+        </div>
     </div>
 </main>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
 <script defer src="js/main.js"></script>
 </body>
