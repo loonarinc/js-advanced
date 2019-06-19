@@ -67,6 +67,7 @@ img {
     padding: 15px
 }
 .cart{
+    display: flex;
     position: relative;
 }
 .cart-block{
@@ -151,7 +152,6 @@ img {
     position: absolute;
     bottom: 5px;
     right: 0;
-    cursor: pointer;
 }
 .search-form{
     position: relative;
