@@ -9,24 +9,24 @@
 <body>
 <div id="app">
 <header>
-    <errormsg ref="errorMsg"></errormsg>
     <div class="logo">E-shop</div>
     <div class="cart">
-        <filter-form ref="filterForm"></filter-form>
+
+        <filter-el></filter-el>
         <cart ref="cart"></cart>
     </div>
 </header>
 <main>
-    <errormsg ref="errorMsg"></errormsg>
     <products ref="products"></products>
+    <error ref="error"></error>
 </main>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
 <script src="js/ProductsComponent.js"></script>
+<script src="js/FilterComp.js"></script>
+<script src="js/ErrorComp.js"></script>
 <script src="js/CartComponent.js"></script>
-<script src="js/FilterComponent.js"></script>
-<script src="js/ErrorComponent.js"></script>
 <script defer src="js/main.js"></script>
 </body>
 </html>

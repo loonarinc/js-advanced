@@ -1,0 +1,68 @@
+[
+    {
+        "time": "2019-06-22T15:23:51+03:00",
+        "action": "addNew",
+        "id_product": 123,
+        "product_name": "Ноутбук",
+        "price": 45600
+    },
+    {
+        "time": "2019-06-22T15:24:02+03:00",
+        "action": "addQuantity",
+        "id_product": 123,
+        "product_name": "Ноутбук",
+        "price": 45600
+    },
+    {
+        "time": "2019-06-22T15:24:10+03:00",
+        "action": "addNew",
+        "id_product": 456,
+        "product_name": "Мышка",
+        "price": 1000
+    },
+    {
+        "time": "2019-06-22T15:24:16+03:00",
+        "action": "removeProduct",
+        "quantity": 1,
+        "id_product": 456,
+        "product_name": "Мышка",
+        "price": 1000
+    },
+    {
+        "time": "2019-06-22T15:25:38+03:00",
+        "action": "addNew",
+        "id_product": 456,
+        "product_name": "Мышка",
+        "price": 1000
+    },
+    {
+        "time": "2019-06-22T15:25:46+03:00",
+        "action": "addQuantity",
+        "id_product": 456,
+        "product_name": "Мышка",
+        "price": 1000
+    },
+    {
+        "time": "2019-06-22T15:25:52+03:00",
+        "action": "lessQuantity",
+        "quantity": 2,
+        "id_product": 456,
+        "product_name": "Мышка",
+        "price": 1000
+    },
+    {
+        "time": "2019-06-22T15:26:07+03:00",
+        "action": "removeProduct",
+        "quantity": 1,
+        "id_product": 456,
+        "product_name": "Мышка",
+        "price": 1000
+    },
+    {
+        "time": "2019-06-22T15:27:15+03:00",
+        "action": "addNew",
+        "id_product": 123,
+        "product_name": "Ноутбук",
+        "price": 45600
+    }
+]
